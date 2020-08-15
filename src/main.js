@@ -15,12 +15,17 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    count: 0
+    movies: [
+      { id: 1, title: 'The Hangover', genre: 'Comedy' },
+      { id: 2, title: 'I Love You Man', genre: 'Comedy' },
+      { id: 3, title: 'Liar Liar', genre: 'Comedy' },
+      { id: 4, title: 'Cars', genre: 'Family' },
+      { id: 5, title: 'Toy Story', genre: 'Family' },
+      { id: 6, title: 'Wreck it! Ralph', genre: 'Family' },
+    ]
   },
   mutations: {
-    increment(state) {
-      state.count++
-    }
+   
   }
 })
 

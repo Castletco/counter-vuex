@@ -1,17 +1,20 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <Counter />
+    <ComedyMovieList />
+    <FamilyMovieList />
   </div>
 </template>
 
 <script>
-import Counter from './components/Counter.vue'
+import ComedyMovieList from './components/ComedyMovieList.vue'
+import FamilyMovieList from './components/FamilyMovieList.vue'
 
 export default {
   name: 'App',
   components: {
-    Counter
+    ComedyMovieList,
+    FamilyMovieList
   }
 }
 </script>
