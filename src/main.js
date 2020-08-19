@@ -24,10 +24,41 @@ const store = new Vuex.Store({
       { id: 6, title: 'Wreck it! Ralph', genre: 'Family' },
     ]
   },
+  getters: {
+    sortedMoviesByGenre: state => genre => {
+      const filteredMovies = state.movies.filter(
+      movie => movie.genre === genre
+      );
+      return filteredMovies.sort(
+        (movieA, movieB) => movieB.score - movieA.score
+      );
+    },
+  },
   mutations: {
-   
-  }
-})
+    incrementMovieScore(state, movieId) {
+      const movieToIncrement = state.movies.find(movie => movie.id === movieId);
+      const updatedMovie = {
+        ...movieToIncrement,
+        score: movieToIncrement.score + 1,
+      };
+      state.movies = [
+        updatedMovie,
+        ...state.movies.filter(movie => movie.id !== movieId),
+      ];
+    },
+    decrementMovieScore(state, movieId) {
+      const movieToDecrement = state.movies.find(movie => movie.id === movieId);
+      const updatedMovie = {
+        ...movieToDecrement,
+        score: movieToDecrement.score - 1,
+      };
+      state.movies = [
+        updatedMovie,
+        ...state.movies.filter(movie => movie.id !== movieId),
+      ];
+    },
+  },
+});
 
 new Vue({
   store,

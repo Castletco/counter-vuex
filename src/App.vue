@@ -1,22 +1,20 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <ComedyMovieList />
-    <FamilyMovieList />
+    <MovieList genre="Comedy" />
+    <MovieList genre="Family" />
   </div>
 </template>
 
 <script>
-import ComedyMovieList from './components/ComedyMovieList.vue'
-import FamilyMovieList from './components/FamilyMovieList.vue'
-
+import MovieList from "./components/MovieList.vue";
+  
 export default {
-  name: 'App',
+  name: "app",
   components: {
-    ComedyMovieList,
-    FamilyMovieList
+    MovieList
   }
-}
+};
 </script>
 
 <style>
